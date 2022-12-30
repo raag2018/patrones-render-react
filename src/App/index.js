@@ -13,7 +13,7 @@ import { TodoEmpty } from "../TodoEmpty";
 import { TodoError } from "../TodoError";
 import { TodoLoading } from "../TodoLoading";
 import { TodoHeader } from "../TodoHeader";
-import { ChangeAlertWithStorageListener } from "../ChangeAlert";
+import { ChangeAlert } from "../ChangeAlert";
 /*  const defaultTodos = [
   {text: "Comida 1", complete: false},
   {text: "Comida 2", complete: true},
@@ -106,7 +106,7 @@ function App() {
             } 
             </TodoList> 
             */}
-            <ChangeAlertWithStorageListener
+            <ChangeAlert
                 sincronize={sincronizeTodos}
             />
             <CreateTodoButton setOpenModal={setOpenModal}/> 
