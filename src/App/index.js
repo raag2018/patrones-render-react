@@ -13,6 +13,7 @@ import { TodoEmpty } from "../TodoEmpty";
 import { TodoError } from "../TodoError";
 import { TodoLoading } from "../TodoLoading";
 import { TodoHeader } from "../TodoHeader";
+import { ChangeAlertWithStorageListener } from "../ChangeAlert";
 /*  const defaultTodos = [
   {text: "Comida 1", complete: false},
   {text: "Comida 2", complete: true},
@@ -44,6 +45,7 @@ function App() {
         searchValue,
         setSearchValue,
         addTodo,
+        sincronizeTodos,
     } = useTodos();
     return (
      <React.Fragment>
@@ -104,6 +106,9 @@ function App() {
             } 
             </TodoList> 
             */}
+            <ChangeAlertWithStorageListener
+                sincronize={sincronizeTodos}
+            />
             <CreateTodoButton setOpenModal={setOpenModal}/> 
             {!!openModal && (
                 <Modal>

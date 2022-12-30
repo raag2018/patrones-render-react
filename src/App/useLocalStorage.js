@@ -3,7 +3,7 @@ const useLocalStore = (itemName, initialValue) =>{
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(false);
     const [item, setItem] = React.useState(initialValue);
-
+    const [sincronized, setSincronized] = React.useState(true);
     React.useEffect(() => {
       setTimeout(() => {
         try{
@@ -17,11 +17,12 @@ const useLocalStore = (itemName, initialValue) =>{
           }
           setItem(parsedItem);
           setLoading(false);
+          setSincronized(true);
         }catch(err){
           setError(err);
         }
       }, 1000)
-    });
+    },[sincronized]);
  
   
     const saveItem = (newItem) =>{
@@ -34,8 +35,12 @@ const useLocalStore = (itemName, initialValue) =>{
         setError(err);
       }
     }
+    const sincronizeItem = () => {
+      setLoading(true);
+      setSincronized(false);
+    }
     return {
-      item, saveItem, loading, error
+      item, saveItem, loading, error, sincronizeItem
     }
   }
   export {useLocalStore};
