@@ -7,12 +7,15 @@ function TodoSearch({searchValue, setSearchValue}){
 		setSearchValue(data);
 	}
 	return (
-			 <input 
-			  placeholder='Comida'
-			  className='todoSearch'
-			  value={searchValue}
-			  onChange={onSearchValueChange}
-			  />
+			<div className='container mb-5'>
+				<input 
+					placeholder='Comida'
+					className='todoSearch form-control'
+					value={searchValue}
+					onChange={onSearchValueChange}
+				/>
+			</div>
+			
 			)
 			;
 }

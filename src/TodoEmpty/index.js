@@ -1,6 +1,8 @@
 import React from "react";
 
 function TodoEmpty() {
-    return <p > Por favor crea tu primer TODO. < /p>;
+    return (
+         <p className="alert alert-info"> Por favor crea tu primer TODO. </p>
+    );
 }
 export { TodoEmpty };
