@@ -1,6 +1,6 @@
 import React from 'react';
 import "./TodoSearch.css";
-function TodoSearch({searchValue, setSearchValue}){
+function TodoSearch({searchValue, setSearchValue, loading}){
 	const onSearchValueChange = (event) =>{
 		let data = event.target.value;
 		// 	console.log(data);
@@ -13,10 +13,9 @@ function TodoSearch({searchValue, setSearchValue}){
 					className='todoSearch form-control'
 					value={searchValue}
 					onChange={onSearchValueChange}
+					disabled={loading}
 				/>
 			</div>
-			
-			)
-			;
+		);
 }
 export {TodoSearch};

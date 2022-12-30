@@ -12,6 +12,7 @@ import { TodoForm } from "../TodoForm";
 import { TodoEmpty } from "../TodoEmpty";
 import { TodoError } from "../TodoError";
 import { TodoLoading } from "../TodoLoading";
+import { TodoHeader } from "../TodoHeader";
 /*  const defaultTodos = [
   {text: "Comida 1", complete: false},
   {text: "Comida 2", complete: true},
@@ -46,12 +47,17 @@ function App() {
     } = useTodos();
     return (
      <React.Fragment>
-        <TodoCounter totalTodos={totalTodos}
-            completeTodos={completeTodos}
-        /> 
-        <TodoSearch searchValue={searchValue}
-            setSearchValue={setSearchValue}
-        /> 
+        <TodoHeader loading={loading}>
+            <TodoCounter 
+                totalTodos={totalTodos}
+                completeTodos={completeTodos}
+            /> 
+            <TodoSearch 
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+            /> 
+        </TodoHeader>
+       
         <TodoList
             error={error}
             loading={loading}
